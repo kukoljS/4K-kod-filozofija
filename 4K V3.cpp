@@ -11,6 +11,8 @@
 #include <cstdlib>
 #include <cmath>
 
+#define MAX 10000
+
 HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);  //za boju teksta
 using namespace std;
 
@@ -21,9 +23,9 @@ void enkript(long n) {
 	int range = 1000 - 100 + 1;     // Generise jedan broj za kasniju operaciju
 	int y = rand() % range + 100;
 
-	char niz[10000];
-	float arr[10000];
-	string ulaz[10000];
+	char niz[MAX];
+	float arr[MAX];
+	string ulaz[MAX];
 	int i = 0;
 
 	while (getline(cin, ulaz[i])) {      // uzima input iz vise linija dok se ne otkuca "stop"
@@ -36,8 +38,8 @@ void enkript(long n) {
 	cout << "Obradjen tekst je: " << endl;
 	SetConsoleTextAttribute(hConsole, 11); // sve ovakve linije menjaju boju teksta, 11 je svetloplava boja
 	for (int j = 0; j < i; j++) {
-
-		for (int i = 0; i < ulaz[j].length(); i++) { // generise random broj za svaki uneti karakter
+		int duzina = ulaz[j].length();
+		for (int i = 0; i < duzina; i++) { // generise random broj za svaki uneti karakter
 			arr[i] = rand() % 100 + 1;
 		}
 
@@ -76,8 +78,8 @@ void dekript(long n) { // isto kao enkript samo suprotno
 	cout << "Obradjen tekst je: " << endl;
 	SetConsoleTextAttribute(hConsole, 11);
 	for (int j = 0; j < i; j++) {
-
-		for (int i = 0; i < ulaz[j].length(); i++) {
+		int duzina = ulaz[j].length();
+		for (int i = 0; i < duzina; i++) {
 			arr[i] = rand() % 100 + 1;
 		}
 
