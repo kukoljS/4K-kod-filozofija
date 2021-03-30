@@ -43,7 +43,7 @@ void enkript(long n) {
 			arr[i] = rand() % 100 + 1;
 		}
 
-		for (int i = 0; i < ulaz[j].length(); i++) {  
+		for (int i = 0; i < duzina; i++) {  
 			int x = y / arr[i];
 			niz[i] = ulaz[j][i] + x;   // za enkripciju | povecava vrednost karaktera za x koje se dobija od y generisanog na pocetku i malopre generisanog broja
 			//niz[i] = ulaz[j][i] - x;	  // za dekripciju
@@ -83,7 +83,7 @@ void dekript(long n) { // isto kao enkript samo suprotno
 			arr[i] = rand() % 100 + 1;
 		}
 
-		for (int i = 0; i < ulaz[j].length(); i++) {
+		for (int i = 0; i < duzina; i++) {
 			int x = y / arr[i];
 			if (ulaz[j][i] == 14) {
 				ulaz[j][i] = 127;
